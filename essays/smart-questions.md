@@ -20,9 +20,10 @@ labels:
 As I've learned from "How To Ask Questions The Smart Way" by Eric Raymond, there is a smart and a not so smart way in asking a question. Knowing how to formulate your question will most likely get it answered, especially on sites like Stack Overflow. Asking questions in a "smart way" includes showing that you have done your research showcase how you tried to solve a problem. Additionally, of course, the question should be easily understandable and clear. The question is precise, and explicitly explain the problem, and the question is not open-ended. An example of "not so smart" way of asking a question is asking questions that could be easily searched up, does not clarify the problem and asks open-ended question.
 
 
-## Analyzing smart and not so smart questions
+## Analyzing "smart" and "not so smart" questions
 
 Below is a question I found from stack overflow.
+
 https://stackoverflow.com/questions/80002083/kingswaysoft-salesforce-destination-v26-2-what-does-assume-success-on-accepte
 
 In the example below is a smart question. This question is an example of a good question. The question is precise and informative, and they talk through all the ways they have tried to find the solution for it. They have also included specific questions and not open ended so others can provide answers they are looking for. 
@@ -46,6 +47,7 @@ Can someone who actually uses this option (or works at KingswaySoft) confirm:
 ```
 
 Another question that I pulled from stack overflow.
+
 https://stackoverflow.com/questions/80000773/google-maps-distance-matrix-api-returning-zero-results-for-valid-local-us-addres
 
 This question violates the principles for smart questions established by Raymond. There is really not a question here at all. They have only included a title that added context to the snippet of code and what seems to be the problem, and only have a code snippet on the actual post. They have also not disclosed anything about what they have tried to fic the problem. 
