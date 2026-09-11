@@ -1,11 +1,13 @@
 ---
 layout: essay
 type: essay
-title: "Smart Questions, Good Answers"
+title: "Analyzing smart questions"
 # All dates must be YYYY-MM-DD format!
-date: 2015-09-08
+date: 2026-09-10
 published: true
 labels:
+  - E11
+  - ICS 314
   - Questions
   - Answers
   - StackOverflow
@@ -13,87 +15,51 @@ labels:
 
 <img width="300px" class="rounded float-start pe-4" src="../img/smart-questions/rtfm.png">
 
-## Is there such thing as a stupid question?
+## Asking smart questions
 
-I’ve had instructors address a whole class and say, “There’s no such thing as a stupid question.” I now know that is in fact not true because I’ve challenged the statement and received the appropriate dumb-stricken, annoyed look. There are definitely stupid questions, and along with that, usually unhelpful answers. Though we all might be guilty of being callous and making people victim to our poorly formed questions, there are steps we can take to ask smarter questions that hopefully don’t illicit the dreaded “rtfm” or “stfw” response.
+As I've learned from "How To Ask Questions The Smart Way" by Eric Raymond, there is a smart and a not so smart way in asking a question. Knowing how to formulate your question will most likely get it answered, especially on sites like Stack Overflow. Asking questions in a "smart way" includes showing that you have done your research showcase how you tried to solve a problem. Additionally, of course, the question should be easily understandable and clear. The question is precise, and explicitly explain the problem, and the question is not open-ended. An example of "not so smart" way of asking a question is asking questions that could be easily searched up, does not clarify the problem and asks open-ended question.
 
-## What’s a smart question?
 
-Stack Overflow, a question and answer site for programmers, is a great resource for anyone who may have issues with code or who may simply want to learn new or different methods of doing something. There I found examples of good questions and bad questions, which could probably be improved.
+## Analyzing smart and not so smart questions
 
-In the following example, we examine the components of a decent question. In this case, the asker is trying to figure out a way to get the date of the previous month in Python.
+Below is a question I found from stack overflow.
+https://stackoverflow.com/questions/80002083/kingswaysoft-salesforce-destination-v26-2-what-does-assume-success-on-accepte
+
+In the example below is a smart question. This question is an example of a good question. The question is precise and informative, and they talk through all the ways they have tried to find the solution for it. They have also included specific questions and not open ended so others can provide answers they are looking for. 
+```
+I'm using KingswaySoft SSIS Integration Toolkit for Salesforce version 26.2 (26.2.0.18401).
+
+In the Salesforce Destination component, when "Use Bulk API" is enabled, there is an option called "Assume Success on Accepted Job".
+
+I can't find any official documentation about this setting — neither in the Help Manual nor in any KingswaySoft blog posts.
+
+Interestingly, every AI engine I asked (ChatGPT, Claude, Grok, etc.) is able to explain what this option does, but they all do it purely by deduction/reasoning. None of them can point to actual official documentation, which makes me wonder how reliable those explanations really are.
+
+From what I understand (and what the AIs suggest), when Salesforce accepts the Bulk job (status = Accepted), this option makes the component consider the operation successful immediately, without waiting for the job to fully complete (Completed/Failed).
+
+Can someone who actually uses this option (or works at KingswaySoft) confirm:
+
+1. Is this the correct behavior?
+2. In which scenarios is it recommended to enable it?
+3. Are there any important side effects (especially regarding error handling and SalesforceRecordId)?
 
 ```
-Q: python date of the previous month
 
-I am trying to get the date of the previous month with python. Here is what i've tried:
+Another question that I pulled from stack overflow.
+https://stackoverflow.com/questions/80000773/google-maps-distance-matrix-api-returning-zero-results-for-valid-local-us-addres
 
-str( time.strftime('%Y') ) + str( int(time.strftime('%m'))-1 )
-
-However, this way is bad for 2 reasons: First it returns 20122 for the February of 2012 (instead of 201202) 
-and secondly it will return 0 instead of 12 on January.
-
-I have solved this trouble in bash with:
-
-echo $(date -d"3 month ago" "+%G%m%d")
-
-I think that if bash has a built-in way for this purpose, then python, much more equipped, should provide something 
-better than forcing writing one's own script to achieve this goal. Of course i could do something like:
-
-if int(time.strftime('%m')) == 1:
-    return '12'
-else:
-    if int(time.strftime('%m')) < 10:
-        return '0'+str(time.strftime('%m')-1)
-    else:
-        return str(time.strftime('%m') -1)
-        
-I have not tested this code and i don't want to use it anyway (unless I can't find any other way:/)
-
-Thanks for your help!
-```
-
-While the heading of his question could be better, it does convey what he’s trying to figure out. Usually something as brief as “python date of previous month” is what other users would enter in as search terms on Google, making it easily found. Another good thing about the question is that it’s not just a question. The asker shows what he or she has done and that he or she has put in some effort to answer the question. And while it may not be as important as the question itself, the asker shows courtesy, which does increase the chance of getting an answer.
+This question violates the principles for smart questions established by Raymond. There is really not a question here at all. They have only included a title that added context to the snippet of code and what seems to be the problem, and only have a code snippet on the actual post. They have also not disclosed anything about what they have tried to fic the problem. 
 
 ```
-A: datetime and the datetime.timedelta classes are your friend.
+Google Maps Distance Matrix API returning ZERO_RESULTS for valid local US addresses in JavaScript fetch
 
-1. find today
-2. use that to find the first day of this month.
-3. use timedelta to backup a single day, to the last day of the previous month.
-4. print the YYYYMM string you're looking for.
-
-Like this:
-
- >>> import datetime
- >>> today = datetime.date.today()
- >>> first = datetime.date(day=1, month=today.month, year=today.year)
- >>> lastMonth = first - datetime.timedelta(days=1)
- >>> print lastMonth.strftime("%Y%m")
- 201202
- >>>
+/*
+ code
+*/
 
 ```
  
-The asker received six possible answers, and he or she was successful in inciting discussion from multiple users. The answers themselves were clear and were devoid of the rumored sarcasm and hostility of “hackers.” Since I myself have referenced this page and found it useful, I can confidently say that it is a good question.
-
-## The foolproof way to get ignored.
-
-While there are decent questions that benefit everyone, there are those one can ask to create an entirely different effect. In the following example, a user asks how he would, in short, create a desktop application with Facebook.
-
-```
-Q: Facebook Desktop Notifier
-
-I am a beginner programmer that have never used anything other than what's included in a language.
-
-I am trying to create a desktop application that notifies me anytime I get an update onfacebook. 
-How should go about doing this? Thanks in advance.
-
-edit Sorry I was not clear. Is there any way to make a DESKTOP application with facebook?
-```
-
-A simple “yes” would have answered the question, but we know that’s not the sort of answer he or she is looking for. Fortunately, someone kindly responded with a link to Facebook’s developer website. The asker should have done more research on his or her potential project. Then further down the road, he or she could have asked more specific and detailed questions that wouldn’t require a thousand-paged response for a sufficient answer.
 
 ## Conclusion
+Asking a smart question is easily understandable and straight to the point. With this, others reading the question are able to provide you with the exact solution that you are looking for. Also, with a detailed and precise question, others can easily find your question, so it will be easier for others with the same question and problems to see a solution. 
 
-When we rely on others’ generosity and expertise to provide answers to our questions, it should hold that the question we ask should be one that leads to efficient and effective help that not only benefits us, but also the people we ask and others who might ask the same question in the future. Thus, if you have a question… make it a smart one! Asking questions may not always get you the best answer, but asking them in a way that will make others want to answer them will increase the success of finding a good solution and make it a positive experience on all sides.
